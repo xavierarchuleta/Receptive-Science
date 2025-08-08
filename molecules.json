@@ -1,0 +1,29 @@
+[
+  {
+    "id":"mol001",
+    "name":"Aurorin (demo)",
+    "formula":"C12H14X2",
+    "targets":[{"receptor":"5-HT2A","affinity":0.42},{"receptor":"D2","affinity":0.07}],
+    "safety":"yellow",
+    "notes":"Synthetic demo molecule — simulated properties only.",
+    "color":"#9fe3ff"
+  },
+  {
+    "id":"mol002",
+    "name":"Calm-X (demo)",
+    "formula":"C9H11N1O1",
+    "targets":[{"receptor":"GABA-A","affinity":0.33}],
+    "safety":"green",
+    "notes":"Fictional relaxation-like profile.",
+    "color":"#bfe7b9"
+  },
+  {
+    "id":"mol003",
+    "name":"SpikeRed (demo)",
+    "formula":"C16H22X3",
+    "targets":[{"receptor":"NMDA","affinity":0.22}],
+    "safety":"red",
+    "notes":"Fictional high-risk compound — do not interpret as real.",
+    "color":"#ff9a9a"
+  }
+]
