@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Receptive Science — Prototype</title>
+
+  <!-- Three.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- Chart.js for charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Tone.js for ambient sounds -->
+  <script src="https://cdn.jsdelivr.net/npm/tone@14.7.77/build/Tone.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Receptive Science</div>
+    <nav>
+      <button id="startBtn">Start Experiment</button>
+      <button id="libraryBtn">Chemical Library</button>
+      <button id="brainBtn">Brain Receptor Map</button>
+      <button id="visionBtn">Vision Simulator</button>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- 3D canvas -->
+    <section id="scene">
+      <canvas id="threeCanvas"></canvas>
+      <div id="uiOverlay">
+        <div id="benchTitle">3D Lab Bench</div>
+        <div id="controlsMini">Drag molecules from the left → into beakers on the bench</div>
+      </div>
+    </section>
+
+    <!-- Left panel: Chemical Library -->
+    <aside id="leftPanel" class="panel">
+      <h3>Chemical Library</h3>
+      <div id="moleculeList"></div>
+    </aside>
+
+    <!-- Right panel: Brain / Data -->
+    <aside id="rightPanel" class="panel">
+      <h3>Brain Receptor Map</h3>
+      <div id="brainView"></div>
+      <div id="receptorStats" class="card">
+        <h4>Selected Connection</h4>
+        <div id="connectionInfo">No connection</div>
+      </div>
+
+      <h3>Brainwaves</h3>
+      <canvas id="brainwaveChart" height="140"></canvas>
+
+      <h3>Data Output</h3>
+      <div id="dataOutput" class="card">
+        <p id="summaryText">No experiment loaded.</p>
+        <ul id="warnings"></ul>
+      </div>
+    </aside>
+
+    <!-- Bottom modal / Vision Simulator -->
+    <div id="visionModal" class="modal hidden">
+      <div class="modal-inner">
+        <h3>Vision & Perception Simulator</h3>
+        <div id="visionCanvasHolder">
+          <canvas id="visionCanvas" width="600" height="320"></canvas>
+        </div>
+        <div class="sliders">
+          <label>Color distortion: <input type="range" id="v_color" min="0" max="100" value="15"></label>
+          <label>Motion trails: <input type="range" id="v_trails" min="0" max="100" value="20"></label>
+          <label>Blur/focus shift: <input type="range" id="v_blur" min="0" max="100" value="10"></label>
+          <label>Audio intensity: <input type="range" id="v_audio" min="0" max="100" value="10"></label>
+        </div>
+        <button id="closeVision">Close</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <small>Prototype — For educational & visualization only. Not for medical or lab use.</small>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
